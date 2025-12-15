@@ -3,6 +3,7 @@ base_url = "https://of-the-stars.net"
 title = "Zola Wassail"
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
+generate_feeds = true
 
 # Whether to build a search index to be used later on by a JavaScript library
 # build_search_index = true
@@ -21,3 +22,7 @@ url = "@/_index.md"
 [[extra.navbar]]
 name = "Blog"
 url = "@/blog/_index.md"
+
+[[extra.navbar]]
+name = "Feed"
+url = "/atom.xml"
