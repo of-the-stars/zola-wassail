@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <title>MyBlog</title>
-  <style>
-  {% include "style.css.html" ignore missing %}
-  </style>
-</head>
-
-<body>
-  <section class = "menu">
-    <div class="container">
-      <ul><a href="{{ get_url(path='@/_index.md') }}">Home</a></ul>
-      <ul><a href="{{ get_url(path='@/blog/_index.md') }}">Blog</a></ul>
-    </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      {% block content %} {% endblock content %}
-    </div>
-  </section>
-</body>
-
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%- block title %}{{ config.title }}{%- endblock %}</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    {% include "header.html" %}
+    <section class="section">
+      <div class="container">
+        {% block content %}
+        {% endblock content %}
+      </div>
+    </section>
+  </body>
 </html>

@@ -1,0 +1,9 @@
+{%- if config.extra.navbar %}
+  {%- for item in config.extra.navbar %}
+    {%- if item.url is matching("https?://") %}
+      <a href="{{ item.url }}">{{ item.name }}</a>
+    {%- else %}
+      <a href="{{ get_url(path=item.url) }}">{{ item.name }}</a>
+    {%- endif %}
+  {%- endfor %}
+{%- endif -%}
