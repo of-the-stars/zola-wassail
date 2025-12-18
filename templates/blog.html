@@ -3,15 +3,16 @@
   <link rel="stylesheet" href="style.css">
 </head>
 {% block content %}
-  <ul>
+  <ul class="post-list">
     <!-- If you are using pagination, section.pages will be empty.
 You need to use the paginator object -->
     {% for page in section.pages %}
       <li>
         <a href="{{ page.permalink | safe }}">
           <div class="post-listing">
-            <div class="post-listing-title">{{ page.date }}&emsp;{{ page.title }}</div>
-            <div class="post-listing-description">&emsp;{{ page.description }}</div>
+            <span class="title">{{ page.date }}&emsp;{{ page.title }}</span>
+            <br \>
+            <span class="description">&emsp;{{ page.description }}</span>
           </div>
         </a>
       </li>

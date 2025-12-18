@@ -1,8 +1,19 @@
-$font-stack: Courier New;
+@font-face {
+  font-family: RobotoMono;
+  src: url(RobotoMono/RobotoMonoNerdFontMono-Regular.ttf);
+}
+
+@font-face {
+  font-family: RobotoMono;
+  src: url(RobotoMono/RobotoMonoNerdFontMono-Bold.ttf);
+  weight: bold;
+}
+
+$font-stack: RobotoMono;
 $text-color: #cdd6f4;
 $link-color: #89b4fa;
 $background-color: #11111b;
-$max-width: 800px;
+$width: 600px;
 
 body {
   font: 100% $font-stack;
@@ -13,18 +24,31 @@ body {
   text-align: left;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  width: $max-width;
+  max-width: $width;
 }
 
 h1,
 h2,
-h3 {
-  text-align: center;
+h3,
+h4,
+h5,
+h6 {
+  text-align: left;
 }
 
 a.title {
   color: $text-color;
   text-decoration: none;
+}
+
+a {
+  color: $link-color;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 nav {
@@ -41,7 +65,32 @@ nav {
   a {
     // display: block;
     padding: 0px 0px;
+    margin-right: 10px;
     text-decoration: none;
     color: $link-color;
+  }
+}
+
+ul.post-list {
+  margin: 5px;
+  padding: unset;
+  list-style: none;
+
+  li {
+    display: flex;
+  }
+
+  a {
+    // display: block;
+    // padding: 0px 0px;
+    text-decoration: none;
+
+    span.title {
+      color: $link-color;
+    }
+
+    span.description {
+      color: $text-color;
+    }
   }
 }
